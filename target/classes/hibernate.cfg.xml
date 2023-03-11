@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+     <property name="connection.username">root</property>
+     <property name="connection.password">root123</property>
+
+
+    <!-- SQL方言，這邊設定的是MySQL -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!-- 顯示實際操作資料庫時的SQL -->
+    <property name="hibernate.show_sql">false</property>
+    <!-- 將顯示的SQL排版，方便觀看 -->
+    <property name="hibernate.format_sql">false</property>
+
+      <!-- DB schema will be updated if needed -->
+     <property name="hibernate.hbm2ddl.auto">update</property>
+     <mapping resource="TbBrandEntity.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
